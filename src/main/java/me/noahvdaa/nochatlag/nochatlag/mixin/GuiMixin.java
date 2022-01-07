@@ -33,17 +33,16 @@ public class GuiMixin {
 			at = @At("HEAD"),
 			cancellable = true
 	)
-	public void handleChat(ChatType var1, Component var2, UUID var3, CallbackInfo ci) {
+	public void handleChat(ChatType chatType, Component chatComponent, UUID senderUUID, CallbackInfo ci) {
 		HttpUtil.DOWNLOAD_EXECUTOR.submit(() -> {
-			if (!minecraft.isBlocked(var3)) {
-				if (!minecraft.options.hideMatchedNames || !minecraft.isBlocked(((GuiInvokerMixin) this).invokeGuessChatUUID(var2))) {
-					Iterator var4 = ((List) chatListeners.get(var1)).iterator();
+			if (!minecraft.isBlocked(senderUUID)) {
+				if (!minecraft.options.hideMatchedNames || !minecraft.isBlocked(((GuiInvokerMixin) this).invokeGuessChatUUID(chatComponent))) {
+					Iterator chatListenerIterator = ((List) chatListeners.get(chatType)).iterator();
 
-					while (var4.hasNext()) {
-						ChatListener var5 = (ChatListener) var4.next();
-						var5.handle(var1, var2, var3);
+					while (chatListenerIterator.hasNext()) {
+						ChatListener listener = (ChatListener) chatListenerIterator.next();
+						listener.handle(chatType, chatComponent, senderUUID);
 					}
-
 				}
 			}
 		});
