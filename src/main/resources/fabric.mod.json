@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "nochatlag",
+  "version": "${version}",
+  "name": "NoChatLag",
+  "description": "NoChatLag fixes MC-247973 by checking for the blocklist on a different thread than the render thread.",
+  "authors": [
+    "NoahvdAa"
+  ],
+  "contact": {
+    "website": "https://github.com/NoahvdAa/NoChatLag",
+    "repo": "https://github.com/NoahvdAa/NoChatLag"
+  },
+  "license": "MIT",
+  "icon": "assets/NoChatLag/icon.png",
+  "environment": "client",
+  "entrypoints": {
+  },
+  "mixins": [
+    "NoChatLag.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.1"
+  }
+}
