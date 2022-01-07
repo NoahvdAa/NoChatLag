@@ -2,7 +2,6 @@ package me.noahvdaa.nochatlag.nochatlag.mixin;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.ClientChatListener;
-import net.minecraft.client.util.NetworkUtils;
 import net.minecraft.network.MessageType;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Final;
@@ -12,13 +11,16 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Mixin(net.minecraft.client.gui.hud.InGameHud.class)
 public abstract class GuiMixin {
+
+	private final ExecutorService service = Executors.newFixedThreadPool(1);
 
 	@Final
 	@Shadow
@@ -37,7 +39,7 @@ public abstract class GuiMixin {
 			cancellable = true
 	)
 	public void handleChat(MessageType chatType, Text chatComponent, UUID senderUUID, CallbackInfo ci) {
-		NetworkUtils.EXECUTOR.submit(() -> {
+		service.submit(() -> {
 			if (this.client.shouldBlockMessages(senderUUID) || (this.client.options.hideMatchedNames && this.client.shouldBlockMessages(this.extractSender(chatComponent)))) {
 				return;
 			}

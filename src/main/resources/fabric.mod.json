@@ -8,8 +8,9 @@
     "NoahvdAa"
   ],
   "contact": {
-    "website": "https://github.com/NoahvdAa/NoChatLag",
-    "repo": "https://github.com/NoahvdAa/NoChatLag"
+    "homepage": "https://github.com/NoahvdAa/NoChatLag",
+    "issues": "https://github.com/NoahvdAa/NoChatLag/issues",
+    "sources": "https://github.com/NoahvdAa/NoChatLag"
   },
   "license": "MIT",
   "icon": "assets/nochatlag/icon.png",
@@ -22,6 +23,6 @@
   "depends": {
     "fabricloader": ">=0.12.12",
     "fabric": "*",
-    "minecraft": "1.18.1"
+    "minecraft": ">=1.18"
   }
 }
