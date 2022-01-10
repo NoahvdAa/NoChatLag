@@ -4,4 +4,4 @@ Downloads: [Modrinth](https://modrinth.com/mod/nochatlag) | [CurseForge](https:/
 
 A couple of days ago, something changed in Mojang's blocked users API, causing the client to not properly load the list of blocked users on start. Because of this, the client will attempt to fetch the blocklist every two minutes when the chat is being rendered. This loading is done on the same thread as the rendering, causing the game to freeze until Mojang's API returns a response. Since the requests takes a while to complete, this will cause a noticeable lag spike.
 
-This issue is being tracked in Mojira issue [MC-247973](https://bugs.mojang.com/projects/MC/issues/MC-247973).
+This issue is being tracked in Mojira issue [WEB-5587](https://bugs.mojang.com/browse/WEB-5587).
