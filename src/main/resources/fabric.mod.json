@@ -3,7 +3,7 @@
   "id": "nochatlag",
   "version": "${version}",
   "name": "NoChatLag",
-  "description": "NoChatLag fixes MC-247973 by checking for the blocklist on a different thread than the render thread.",
+  "description": "NoChatLag fixes lag spikes caused by chat by checking the blacklist on a different thread.",
   "authors": [
     "NoahvdAa"
   ],
