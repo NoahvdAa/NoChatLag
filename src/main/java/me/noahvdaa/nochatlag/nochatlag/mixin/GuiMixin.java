@@ -40,7 +40,7 @@ public abstract class GuiMixin {
 	)
 	public void handleChat(MessageType chatType, Text chatComponent, UUID senderUUID, CallbackInfo ci) {
 		service.submit(() -> {
-			if (this.client.shouldBlockMessages(senderUUID) || (this.client.options.hideMatchedNames && this.client.shouldBlockMessages(this.extractSender(chatComponent)))) {
+			if (this.client.shouldBlockMessages(senderUUID) || (this.client.options.field_26926 && this.client.shouldBlockMessages(this.extractSender(chatComponent)))) {
 				return;
 			}
 			for (ClientChatListener chatListener : this.listeners.get(chatType)) {

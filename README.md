@@ -8,4 +8,4 @@ A couple of days ago, something changed in Mojang's blocked users API, causing t
 
 This issue is being tracked in Mojira issue [WEB-5587](https://bugs.mojang.com/browse/WEB-5587).
 
-You are currently viewing the 1.17/1.18 branch. Check out the ver/1.16 branch for the 1.16 version.
+You are currently viewing the 1.16.5 branch. Check out the *master* branch for the 1.17/1.18 version.
