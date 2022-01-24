@@ -1,6 +1,6 @@
 # NoChatLag
 
-[Forge Version](https://github.com/NoahvdAa/NoChatLag) | [Plugin Version](https://github.com/NoahvdAa/NoChatLagServer)
+[Forge Version](https://github.com/NoahvdAa/NoChatLagForge) | [Plugin Version](https://github.com/NoahvdAa/NoChatLagServer)
 
 Downloads: [Modrinth](https://modrinth.com/mod/nochatlag) | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/nochatlag/) | [GitHub Releases](https://github.com/NoahvdAa/NoChatLag/releases/tag/1.0.0)
 
